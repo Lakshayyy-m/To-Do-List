@@ -6,7 +6,6 @@ import { taskAction } from "../store/redux-store";
 import { motion } from "framer-motion";
 
 const ListPanel = () => {
-  //todo fix the mobile view, the list panel is not expanding and the elements are collapsing into one another.
   const [listInput, setListInput] = useState(false);
   const listName = useRef();
   const tasks = useSelector((state) => state.tasks);
