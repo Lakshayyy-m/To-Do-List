@@ -1,0 +1,148 @@
+.wrapper {
+  position: relative;
+  min-width: 310px;
+  color: white;
+  flex-basis: content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  min-height: 600px;
+  padding-inline: var(--size-500);
+  height: fit-content;
+  background-color: black;
+  border-top-right-radius: 30px;
+  padding-top: 90px;
+  border-bottom-right-radius: 30px;
+  box-shadow: 0px 0px 10px black;
+  transition: all 0.2s ease-in-out;
+}
+
+.heading {
+  position: absolute;
+  top: 40px;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  /* overflow: scroll; */
+
+}
+
+.listItem {
+  font-size: var(--font-size-600);
+  font-weight: var(--fw-bolder);
+  color: grey;
+  transition: all 0.2s;
+}
+
+.listItem:hover {
+  cursor: pointer;
+  transform: translate(7px);
+}
+
+.add {
+  height: var(--size-600);
+  display: flex;
+  min-width: 115px;
+  justify-content: center;
+  align-items: center;
+  background: #db2414;
+  color: black;
+  opacity: 0.6;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: var(--fw-bolder);
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.add:hover {
+  transform: scale(1.03);
+}
+
+.add:active {
+  background-color: #942116;
+}
+
+.add > * {
+  margin: 6px;
+}
+
+.tick {
+  background: #db2414;
+  color: black;
+  opacity: 0.6;
+  border-radius: 5px;
+  min-width: 40px;
+  margin-left: 20px;
+  border: none;
+}
+
+.tick:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+}
+
+.tick:active {
+  background-color: #942116;
+}
+
+.inputItem {
+  display: flex;
+  align-items: center;
+  transition: all 0.2 ease-in-out;
+}
+
+.listInput {
+  height: var(--size-600);
+  background: black;
+  border: none;
+  width: 200px;
+  border-radius: 8px;
+  opacity: 0.5;
+  padding-inline: var(--size-400);
+  color: grey;
+  font-size: var(--size-500);
+  transition: all 0.2s;
+  font-weight: var(--fw-bolder);
+}
+
+.listInput:focus {
+  border-inline: 2px solid #db2414;
+  outline: none;
+}
+
+.activeList {
+  transform: translate(7px);
+  color: white;
+  transition: all 0.2s;
+}
+
+@media(max-width:800px){
+  .wrapper{
+    min-height: 30%;
+    flex-basis:unset;
+    flex-grow: 1;
+    padding: 20px;
+    padding-top: 50px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 30px;
+    /* box-shadow: 0px 10px 10px black; */
+  } 
+  .heading{
+    display: block;
+    top: 10px;
+  } 
+  
+  .list{
+    overflow: scroll;
+    width: 100%;
+  }
+}

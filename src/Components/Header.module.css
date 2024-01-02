@@ -1,0 +1,21 @@
+.wrapper {
+  margin-left: 50px;
+  position: relative;
+  top: 0;
+  left: 0;
+  font-size: var(--font-size-900);
+  padding-block: var(--size-600);
+  font-weight: var(--fw-boldest);
+  font-style: italic;
+  color: #991a0e;
+  text-shadow: 0px 0px 15px rgb(13, 1, 1);
+  text-align: left;
+}
+
+@media(max-width:800px){
+  .wrapper{
+    position: static;
+    height: 15%;
+  } 
+}
+

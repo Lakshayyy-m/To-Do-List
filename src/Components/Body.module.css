@@ -1,0 +1,14 @@
+.mainBody {
+  display: flex;
+  gap: 40px;
+}
+
+@media (max-width: 800px) {
+  .mainBody {
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 84%;
+    
+  }
+}

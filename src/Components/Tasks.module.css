@@ -1,0 +1,5 @@
+.wrapper {
+  flex-basis: 83%;
+  display: flex;
+  flex-direction: column;
+}

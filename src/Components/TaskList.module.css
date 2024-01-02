@@ -1,0 +1,258 @@
+.wrapper {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.listItem {
+  display: flex;
+  gap: 50px;
+  width: 60vw;
+  margin-bottom: 20px;
+  padding: 30px;
+}
+
+.completeButton {
+  display: flex;
+  justify-content: center;
+  font-size: var(--font-size-500);
+  transform: scale(2);
+  width: 17px;
+  accent-color: #942116;
+  cursor: pointer;
+}
+
+.taskTitle {
+  color: grey;
+  width: 45%;
+  text-align: left;
+  font-weight: var(--fw-bolder);
+  font-size: var(--font-size-400);
+}
+
+.taskDate {
+  color: grey;
+  width: 45%;
+  text-align: left;
+  font-weight: var(--fw-bolder);
+  font-size: var(--font-size-400);
+}
+
+.hoverListItem:hover {
+  cursor: pointer;
+  background-color: black;
+}
+
+.detailsWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.623);
+}
+
+.taskDetails {
+  background: #131313;
+  display: flex;
+  gap: 40px;
+  border-radius: 10px;
+  min-width: 70vw;
+  padding: 25px;
+  min-height: 60vh;
+}
+
+.left {
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.headerDetails {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.detailsCloserButton {
+  height: var(--size-600);
+  display: flex;
+  min-width: 115px;
+  justify-content: center;
+  align-items: center;
+  background: #db2414;
+  color: black;
+  opacity: 0.6;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: var(--fw-bolder);
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.detailsCloserButton:active {
+  background-color: #942116;
+}
+
+.description {
+  flex-basis: 80%;
+  border-radius: 30px;
+  background-color: rgb(78, 75, 75);
+  outline: none;
+  padding: 25px;
+  font-size: var(--font-size-400);
+  color: white;
+}
+
+.taskList {
+  flex-basis: 35%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  list-style: none;
+  border-radius: 30px;
+  padding: 20px;
+  gap: 10px;
+  background-color: rgb(78, 75, 75);
+}
+
+.addStep {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(190, 187, 187);
+  font-size: var(--font-size-500);
+  font-weight: var(--fw-bolder);
+  margin-bottom: 20px;
+}
+
+.addStep:hover {
+  color: rgb(36, 33, 33);
+  cursor: pointer;
+}
+
+.inputItem {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  transition: all 0.2 ease-in-out;
+}
+
+.addStepInput {
+  height: var(--size-600);
+  background: black;
+  border: none;
+  width: 200px;
+  border-radius: 8px;
+  opacity: 0.5;
+  padding-inline: var(--size-400);
+  color: #db2414;
+  font-size: var(--size-500);
+  transition: all 0.2s;
+  font-weight: var(--fw-bolder);
+}
+
+.addStepInput:focus {
+  border-inline: 2px solid #db2414;
+  outline: none;
+}
+
+.addStepInput::-webkit-calendar-picker-indicator {
+  color: red;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  opacity: 0.6;
+}
+
+.tick {
+  background: #db2414;
+  color: black;
+  opacity: 0.6;
+  border-radius: 5px;
+  min-width: 40px;
+  margin-left: 20px;
+  border: none;
+}
+
+.tick:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+}
+
+.tick:active {
+  background-color: #942116;
+}
+
+.stepItems {
+  color: rgb(190, 187, 187);
+  font-size: var(--font-size-400);
+  align-self: flex-start;
+}
+
+.stepItems:hover {
+  cursor: pointer;
+  text-decoration: line-through;
+}
+
+.editButton {
+  background: #147edb;
+  color: black;
+  opacity: 0.6;
+  border-radius: 5px;
+  height: 35px;
+  min-width: 35px;
+  margin-left: 20px;
+  border: none;
+}
+
+.editButton:hover {
+  cursor: pointer;
+}
+
+.editButton:active {
+  background-color: #0b487d;
+}
+
+@media (max-width: 800px) {
+  .wrapper {
+    padding: 0;
+    margin-top: 50px;
+    width: 100vw;
+    align-items: center;
+  }
+
+  .listItem{
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-top: 20px;
+    width: 80%;
+  }
+
+  .taskDetails{
+    width: 90vw;
+    flex-direction: column;
+  }
+
+  .headerDetails{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .description{
+    min-height: 160px;
+  }
+
+  .editButton{
+    margin: 0;
+  }
+}
