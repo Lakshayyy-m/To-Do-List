@@ -12,10 +12,13 @@
   text-align: left;
 }
 
-@media(max-width:800px){
-  .wrapper{
+@media (max-width: 800px) {
+  .wrapper {
     position: static;
     height: 15%;
-  } 
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
-

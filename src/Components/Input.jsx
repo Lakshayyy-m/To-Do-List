@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import styles from "./Input.module.css";
-import done from "../assets/done_FILL0_wght400_GRAD0_opsz24.svg";
+import done from "../assets/doneButton.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { taskAction } from "../store/redux-store";
 import TaskStructure from "../store/TaskStructure";

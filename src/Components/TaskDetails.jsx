@@ -1,7 +1,7 @@
 import React, { useState, useRef, useLayoutEffect } from "react";
 import styles from "./TaskList.module.css";
 import { motion } from "framer-motion";
-import done from "../assets/done_FILL0_wght400_GRAD0_opsz24.svg";
+import done from "../assets/doneButton.svg";
 import editButton from "../assets/editButton.svg";
 import TaskStructure from "../store/TaskStructure";
 
@@ -146,6 +146,7 @@ const TaskDetails = ({ task, setListDetailOpen, saveTask }) => {
           <motion.textarea
             className={styles.description}
             defaultValue={taskDescription}
+            placeholder="Add a description..."
             ref={taskDescriptionRef}
           />
         </motion.div>

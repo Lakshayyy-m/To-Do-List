@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import styles from "./ListPanel.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import done from "../assets/done_FILL0_wght400_GRAD0_opsz24.svg";
+import done from "../assets/doneButton.svg";
 import { taskAction } from "../store/redux-store";
 import { motion } from "framer-motion";
 

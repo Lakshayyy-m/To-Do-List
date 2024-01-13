@@ -86,19 +86,27 @@
   outline: thick double #942116;
 }
 
-@media(max-width:800px){
-  .wrapper{
+@media (max-width: 800px) {
+  .wrapper {
     justify-content: center;
     margin: auto;
     flex-direction: column;
   }
 
-  .adder-description{
+  .adder-description {
+    width: 80vw;
+    flex-basis: unset;
+    height: 60px;
+  
+  }
+
+  .date {
+    height: 60px;
+    flex-basis: unset;
     width: 80vw;
   }
-  
-  .date{
-    width: 80vw;
-    padding: 25px;
+  .add{
+    flex-basis: unset;
+    height: 40px;
   }
 }

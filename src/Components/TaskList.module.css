@@ -7,6 +7,7 @@
 
 .listItem {
   display: flex;
+  align-items: center;
   gap: 50px;
   width: 60vw;
   margin-bottom: 20px;
@@ -18,8 +19,19 @@
   justify-content: center;
   font-size: var(--font-size-500);
   transform: scale(2);
+  width: 14px;
+  height: 14px;
+  background-color: #942116;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.completeButtonHeader {
+  display: flex;
+  justify-content: center;
+  font-size: var(--font-size-500);
+  transform: scale(2);
   width: 17px;
-  accent-color: #942116;
   cursor: pointer;
 }
 
@@ -229,7 +241,7 @@
     align-items: center;
   }
 
-  .listItem{
+  .listItem {
     gap: 20px;
     justify-content: center;
     align-items: center;
@@ -238,21 +250,21 @@
     width: 80%;
   }
 
-  .taskDetails{
+  .taskDetails {
     width: 90vw;
     flex-direction: column;
   }
 
-  .headerDetails{
+  .headerDetails {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .description{
+  .description {
     min-height: 160px;
   }
 
-  .editButton{
+  .editButton {
     margin: 0;
   }
 }

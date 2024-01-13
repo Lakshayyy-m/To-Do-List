@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { motion, AnimatePresence } from "framer-motion";
 import { taskAction } from "../store/redux-store";
 import TaskDetails from "./TaskDetails";
+import taskCompleteButton from "../assets/taskCompleteButton.svg";
 
 const TaskList = () => {
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ const TaskList = () => {
   } else if (tasks.length !== 0) {
     headers = (
       <li className={styles.listItem}>
-        <div className={styles.completeButton}></div>
+        <div className={styles.completeButtonHeader }></div>
         <div className={styles.taskTitle}>Title</div>
         <div className={styles.taskDate}>Due Date</div>
       </li>
@@ -56,11 +57,9 @@ const TaskList = () => {
             onClick={() => setListDetailOpen(currVal)}
           >
             <motion.div className={styles.completeButton}>
-              <motion.input
-                type="checkbox"
+              <motion.img
                 layout
-                readOnly
-                checked
+                src={taskCompleteButton}
                 onClick={(event) => {
                   event.stopPropagation();
                   return taskComplete(currVal);
