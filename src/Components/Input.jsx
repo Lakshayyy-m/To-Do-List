@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./Input.module.css";
 import done from "../assets/doneButton.svg";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { taskAction } from "../store/redux-store";
 import TaskStructure from "../store/TaskStructure";
 

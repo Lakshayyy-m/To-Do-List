@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import styles from "./ListPanel.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import done from "../assets/doneButton.svg";

@@ -5,7 +5,7 @@ import done from "../assets/doneButton.svg";
 import editButton from "../assets/editButton.svg";
 import TaskStructure from "../store/TaskStructure";
 
-const TaskDetails = ({ task, setListDetailOpen, saveTask }) => {
+const TaskDetails = ({ task, saveTask }) => {
   //state for Add Steps Input
   const [addStepInput, setAddStepInput] = useState(false);
   //state for Title and Date edit
