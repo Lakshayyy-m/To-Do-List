@@ -71,7 +71,9 @@
 }
 
 .add:hover {
+  transform: scale(1.03); 
   transform: scale(1.03);
+  border-radius: 25px;
 }
 
 .add:active {
@@ -97,7 +99,6 @@
     width: 80vw;
     flex-basis: unset;
     height: 60px;
-  
   }
 
   .date {
@@ -105,7 +106,7 @@
     flex-basis: unset;
     width: 80vw;
   }
-  .add{
+  .add {
     flex-basis: unset;
     height: 40px;
   }

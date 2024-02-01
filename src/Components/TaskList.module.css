@@ -5,6 +5,14 @@
   padding: 50px;
 }
 
+.listItemWrapper {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .listItem {
   display: flex;
   align-items: center;
@@ -24,6 +32,11 @@
   background-color: #942116;
   cursor: pointer;
   border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.completeButton:hover{
+  border-radius: 10px;
 }
 
 .dragIcon {

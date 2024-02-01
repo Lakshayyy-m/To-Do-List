@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./TaskList.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,9 +12,11 @@ const TaskList = () => {
   const dispatch = useDispatch();
   // state to control the dispkay of task details
   const [listDetailOpen, setListDetailOpen] = useState(null);
+  // state for window width
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   // fetching the current task list from redux
   const tasks = useSelector((state) => state.tasks[state.currentTaskList]);
-
+  console.log(window.innerWidth);
   // handling the display of headers for task list
   let headers;
   if (tasks.length === 0) {
@@ -45,19 +47,27 @@ const TaskList = () => {
 
   // handling sort on drag and drop
   const handleSortOnDrag = (startIndex, endIndex) => {
-    dispatch(
-      taskAction.taskListSort({
-        startIndex,
-        endIndex,
-      })
-    );
+    if (endIndex !== null) {
+      dispatch(
+        taskAction.taskListSort({
+          startIndex,
+          endIndex,
+        })
+      );
+    }
   };
+
+  // adjusting the styles according to window width size
+  window.addEventListener("resize", () => {
+    setWindowWidth(window.innerWidth);
+  });
 
   return (
     <DragDropContext
-      onDragEnd={(params) =>
-        handleSortOnDrag(params.source.index, params.destination.index)
-      }
+      onDragEnd={(params) => {
+        console.log(params);
+        handleSortOnDrag(params.source.index, params.destination?.index);
+      }}
     >
       <AnimatePresence>
         <motion.ul
@@ -70,7 +80,11 @@ const TaskList = () => {
           <Droppable droppableId="droppable-1">
             {(provided, snapshot) => {
               return (
-                <div ref={provided.innerRef} {...provided.droppableProps}>
+                <div
+                  ref={provided.innerRef}
+                  {...provided.droppableProps}
+                  className={windowWidth < 800 ? styles.listItemWrapper : ""}
+                >
                   {tasks.map((currVal, index) => {
                     return (
                       <Draggable
@@ -122,6 +136,11 @@ const TaskList = () => {
                               <motion.div
                                 {...provided.dragHandleProps}
                                 className={styles.dragIcon}
+                                //?trying to remove the drag handle in mobile view
+                                // style={{
+                                //   display:
+                                //     window.innerWidth < 800 ? "none" : "flex",
+                                // }}
                               >
                                 <img src={dragIcon} />
                               </motion.div>

@@ -1,4 +1,5 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 import styles from "./Input.module.css";
 import done from "../assets/doneButton.svg";
 import { useDispatch, useSelector } from "react-redux";
@@ -49,7 +50,12 @@ const Input = () => {
   };
 
   return (
-    <div className={styles.wrapper}>
+    <motion.div
+      className={styles.wrapper}
+      initial={{ x: 1000 }}
+      animate={{ x: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <input
         className={`${styles["adder-description"]} ${
           titleEmpty ? styles.error : ""
@@ -74,7 +80,7 @@ const Input = () => {
           <img src={done} />
         </span>
       </button>
-    </div>
+    </motion.div>
   );
 };
 
