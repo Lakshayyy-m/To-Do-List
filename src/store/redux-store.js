@@ -1,5 +1,4 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
-import TaskStructure from "./TaskStructure";
 
 const initialTasks = { tasks: { Default: [] }, currentTaskList: "Default" };
 
@@ -27,6 +26,16 @@ const taskSlice = createSlice({
         [state.tasks[state.currentTaskList].indexOf(action.payload.oldTask)],
         1,
         action.payload.newTask
+      );
+    },
+    taskListSort(state, action) {
+      state.tasks[state.currentTaskList].splice(
+        action.payload.endIndex,
+        0,
+        state.tasks[state.currentTaskList].splice(
+          action.payload.startIndex,
+          1
+        )[0]
       );
     },
   },
